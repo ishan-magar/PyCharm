@@ -1,0 +1,56 @@
+1.
+sentence = "data engineering rocks"
+vowels = "aeiou"
+no_vowels = ""
+for char in sentence:
+    if char not in vowels:
+        no_vowels += char
+no_space = no_vowels.replace(" ", "_")
+print(no_space)
+
+2. Struggled so Used AI
+sales = [
+  {"product": "Pen", "amount": 10},
+  {"product": "Book", "amount": 20},
+  {"product": "Pen", "amount": 15},
+  {"product": "Pencil", "amount": 5}
+]
+
+totals = {}
+
+for transaction in sales:
+    product = transaction["product"]
+    amount = transaction["amount"]
+    
+    if product in totals:
+        totals[product] += amount
+    else:
+        totals[product] = amount
+
+for product, total in totals.items():
+    print(f"{product}: {total}")
+
+3.
+
+result = []
+nums = [4, 5, 4, 6, 7, 5, 8]
+for num in nums:
+    if nums.count(num) == 1:
+        result.append(num)
+
+print(result)
+
+4.
+SELECT MAX(salary) AS second_highest_salary
+FROM employees
+WHERE salary < (
+    SELECT MAX(salary)
+    FROM employees
+);
+
+5.
+SELECT c.customer_name
+FROM customers c
+LEFT JOIN orders o
+    ON c.customer_id = o.customer_id
+WHERE o.customer_id IS NULL;
